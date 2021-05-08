@@ -5,6 +5,7 @@ Stage 1
 [] Resize ar1.obj
 [] Add player movement script
 [] Test map collision
+[] Stop the T pose thing on the main character
 
 Stage 2
 [] Implment weapons
