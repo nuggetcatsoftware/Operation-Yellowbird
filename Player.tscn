@@ -17,4 +17,7 @@ environment = ExtResource( 1 )
 current = true
 
 [node name="ar1" parent="Camera" instance=ExtResource( 2 )]
-transform = Transform( -0.0174312, 0, 0.199239, 0, 0.2, 0, -0.199239, 0, -0.0174312, 0.576717, -0.890882, -1.33527 )
+transform = Transform( -0.0174312, 0, 0.199239, 0, 0.2, 0, -0.199239, 0, -0.0174312, 0.576717, -0.716974, -1.33527 )
+
+[node name="Muzzle" type="Spatial" parent="Camera/ar1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.04967, 1.03434, -1.19209e-06 )
