@@ -21,8 +21,10 @@ var vel : Vector3 = Vector3()
 var mouseDelta : Vector2 = Vector2()
 
 # components
-onready var camera : Camera = get_node("Camera")
-onready var muzzle : Spatial = get_node("Camera/Muzzle")
+#what the fuck is going on here? lmao kekw
+
+onready var camera : Camera = get_node("Player pov")
+onready var muzzle : Spatial = get_node("Player pov/Muzzle")
 onready var bulletScene = load("res://Bullet.tscn")
 
 func _ready ():
