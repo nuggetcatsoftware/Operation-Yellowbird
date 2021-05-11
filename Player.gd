@@ -24,17 +24,12 @@ var mouseDelta : Vector2 = Vector2()
 onready var camera : Camera = get_node("Camera")
 onready var muzzle : Spatial = get_node("Camera/Muzzle")
 onready var bulletScene = load("res://Bullet.tscn")
-onready var ui : Node = get_node("/root/MainScene/CanvasLayer/UI")
 
 func _ready ():
 	
 	# hide and lock the mouse cursor
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
-	# set the UI
-	ui.update_health_bar(curHp, maxHp)
-	ui.update_ammo_text(ammo)
-	ui.update_score_text(score)
 
 # called 60 times a second
 func _physics_process(delta):
@@ -112,14 +107,11 @@ func shoot ():
 	
 	ammo -= 1
 	
-	ui.update_ammo_text(ammo)
-
 # called when an enemy damages us
 func take_damage (damage):
 	
 	curHp -= damage
-	
-	ui.update_health_bar(curHp, maxHp)
+
 	
 	if curHp <= 0:
 		die()
@@ -127,12 +119,12 @@ func take_damage (damage):
 # called when our health reaches 0	
 func die ():
 	
-	get_tree().reload_current_scene()
+	print("You died!")
 	
 func add_score (amount):
 	
 	score += amount
-	ui.update_score_text(score)
+
 	
 func add_health (amount):
 	
@@ -141,9 +133,8 @@ func add_health (amount):
 	if curHp > maxHp:
 		curHp = maxHp
 		
-	ui.update_health_bar(curHp, maxHp)
+
 	
 func add_ammo (amount):
 	
 	ammo += amount
-	ui.update_ammo_text(ammo)
